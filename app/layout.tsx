@@ -1,4 +1,4 @@
-import { Nunito_Sans } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import { siteConfig } from '@/data/config/site.settings';
 import { ThemeProviders } from './theme-providers';
 import { Metadata } from 'next';
@@ -8,14 +8,16 @@ import { colors } from '@/data/config/colors.js';
 import '@/css/globals.css';
 import { SearchProvider } from '@/components/shared/SearchProvider';
 import { AnalyticsWrapper } from '@/components/shared/Analytics';
+import Header from '@/components/shared/Header';
+import Footer from '@/components/shared/Footer';
 
-const displayFont = Nunito_Sans({
+const displayFont = Inter({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-space-display',
 });
 
-const baseFont = Nunito_Sans({
+const baseFont = Inter({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-space-default',
@@ -133,11 +135,13 @@ export default function RootLayout({
         <ThemeProviders>
           <AnalyticsWrapper />
 
-          <div className="w-full flex flex-col justify-between items-center font-sans">
+          <div className="w-full flex flex-col justify-between items-center font-sans min-h-screen">
             <SearchProvider>
-              <main className="w-full flex flex-col items-center mb-auto">
+              <Header />
+              <main className="w-full flex flex-col items-center mb-auto pt-20">
                 {children}
               </main>
+              <Footer />
             </SearchProvider>
           </div>
         </ThemeProviders>

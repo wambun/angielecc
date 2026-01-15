@@ -1,18 +1,18 @@
-/* Configure colors at https://shipixen.com/color-theme-explorer-shadcn */
+/* Angiel Electrical - Brand Colors */
 const colors = {
   primary: {
-    lighter: '#fde047',
-    light: '#facc15',
-    main: '#eab308',
-    dark: '#ca8a04',
-    darker: '#a16207',
+    lighter: '#fde68a',
+    light: '#fcd34d',
+    main: '#f59e0b',    // Amber/Gold - electrical theme
+    dark: '#d97706',
+    darker: '#b45309',
   },
   secondary: {
-    lighter: '#6ee7b7',
-    light: '#34d399',
-    main: '#10b981',
-    dark: '#059669',
-    darker: '#047857',
+    lighter: '#93c5fd',
+    light: '#60a5fa',
+    main: '#3b82f6',    // Blue - professional/trust
+    dark: '#2563eb',
+    darker: '#1d4ed8',
   },
 };
 
