@@ -16,7 +16,7 @@ export const Header = ({ className }: { className?: string }) => {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
             <Image
-              src="/images/logo.png"
+              src="/images/logo-dark.png"
               alt="Angiel Electrical Construction Corporation"
               width={50}
               height={46}
