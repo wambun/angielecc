@@ -83,27 +83,30 @@ export const Footer = ({ className }: { className?: string }) => {
             </div>
           ))}
 
-          {/* Contact Info */}
-          <div>
-            <h4 className="text-white font-semibold mb-4">Contact</h4>
+        </div>
+
+        {/* Office Locations - Side by Side and Centered */}
+        <div className="mt-12 pt-12 border-t border-gray-800">
+          <h4 className="text-white font-semibold mb-6 text-center">Our Offices</h4>
+          <div className="flex flex-col md:flex-row justify-center gap-8 md:gap-16">
             {companyInfo.locations.map((location) => (
-              <div key={location.id} className="mb-4">
-                <p className="text-white text-sm font-medium mb-2">{location.name}</p>
+              <div key={location.id} className="text-center">
+                <p className="text-white text-sm font-medium mb-3">{location.name}</p>
                 <div className="space-y-2">
-                  <div className="flex items-start gap-2 text-gray-400 text-sm">
-                    <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0 text-[#c8ff00]" />
+                  <div className="flex items-center justify-center gap-2 text-gray-400 text-sm">
+                    <MapPin className="h-4 w-4 flex-shrink-0 text-[#c8ff00]" />
                     <span>
                       {location.address}, {location.city}, {location.state} {location.zip}
                     </span>
                   </div>
-                  <div className="flex items-center gap-2 text-gray-400 text-sm">
+                  <div className="flex items-center justify-center gap-2 text-gray-400 text-sm">
                     <Phone className="h-4 w-4 flex-shrink-0 text-[#c8ff00]" />
                     <a href={`tel:${location.phone}`} className="hover:text-[#c8ff00] transition-colors">
                       {location.phone}
                     </a>
                   </div>
                   {location.email && (
-                    <div className="flex items-center gap-2 text-gray-400 text-sm">
+                    <div className="flex items-center justify-center gap-2 text-gray-400 text-sm">
                       <Mail className="h-4 w-4 flex-shrink-0 text-[#c8ff00]" />
                       <a href={`mailto:${location.email}`} className="hover:text-[#c8ff00] transition-colors">
                         {location.email}
