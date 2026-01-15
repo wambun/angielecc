@@ -16,7 +16,7 @@ export const projects = [
     value: 300000,
     location: 'Dallas, TX',
     description: 'Complete electrical distribution upgrade for warehouse facility.',
-    image: '/images/portfolio/commercial-1.jpg',
+    image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800&auto=format&fit=crop',
     featured: true,
   },
   {
@@ -27,7 +27,7 @@ export const projects = [
     value: 3800000,
     location: 'Arlington, TX',
     description: 'Full electrical installation for 500,000 sq ft distribution center.',
-    image: '/images/portfolio/commercial-2.jpg',
+    image: 'https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=800&auto=format&fit=crop',
     featured: true,
   },
   {
@@ -38,7 +38,7 @@ export const projects = [
     value: 4600000,
     location: 'Dallas, TX',
     description: 'Major electrical renovation of historic downtown office building.',
-    image: '/images/portfolio/commercial-3.jpg',
+    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop',
     featured: false,
   },
   {
@@ -49,7 +49,7 @@ export const projects = [
     value: 2500000,
     location: 'Dallas, TX',
     description: 'Corporate headquarters electrical infrastructure.',
-    image: '/images/portfolio/commercial-4.jpg',
+    image: 'https://images.unsplash.com/photo-1554469384-e58fac16e23a?q=80&w=800&auto=format&fit=crop',
     featured: false,
   },
 
@@ -62,7 +62,7 @@ export const projects = [
     value: 8500000,
     location: 'Fort Worth, TX',
     description: 'Aircraft maintenance hangar electrical systems.',
-    image: '/images/portfolio/industrial-1.jpg',
+    image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=800&auto=format&fit=crop',
     featured: true,
   },
   {
@@ -73,7 +73,7 @@ export const projects = [
     value: 5200000,
     location: 'Waco, TX',
     description: 'Heavy equipment manufacturing facility electrical installation.',
-    image: '/images/portfolio/industrial-2.jpg',
+    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop',
     featured: true,
   },
   {
@@ -84,7 +84,7 @@ export const projects = [
     value: 6800000,
     location: 'Arlington, TX',
     description: 'Assembly line expansion electrical systems.',
-    image: '/images/portfolio/industrial-3.jpg',
+    image: 'https://images.unsplash.com/photo-1565043666747-69f6646db940?q=80&w=800&auto=format&fit=crop',
     featured: false,
   },
 
@@ -97,7 +97,7 @@ export const projects = [
     value: 13000000,
     location: 'Dallas, TX',
     description: 'Multi-phase hospital electrical infrastructure upgrade.',
-    image: '/images/portfolio/healthcare-1.jpg',
+    image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=800&auto=format&fit=crop',
     featured: true,
   },
   {
@@ -108,7 +108,7 @@ export const projects = [
     value: 8900000,
     location: 'Dallas, TX',
     description: 'Level 1 trauma center critical power systems.',
-    image: '/images/portfolio/healthcare-2.jpg',
+    image: 'https://images.unsplash.com/photo-1538108149393-fbbd81895907?q=80&w=800&auto=format&fit=crop',
     featured: true,
   },
   {
@@ -119,7 +119,7 @@ export const projects = [
     value: 4500000,
     location: 'Dallas, TX',
     description: 'Surgical suite and ICU electrical renovation.',
-    image: '/images/portfolio/healthcare-3.jpg',
+    image: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=800&auto=format&fit=crop',
     featured: false,
   },
 
@@ -132,7 +132,7 @@ export const projects = [
     value: 9500000,
     location: 'Dallas, TX',
     description: 'Tier III data center with 2N redundancy.',
-    image: '/images/portfolio/datacenter-1.jpg',
+    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=800&auto=format&fit=crop',
     featured: true,
   },
   {
@@ -143,7 +143,7 @@ export const projects = [
     value: 7200000,
     location: 'Richardson, TX',
     description: '10MW data center expansion.',
-    image: '/images/portfolio/datacenter-2.jpg',
+    image: 'https://images.unsplash.com/photo-1597852074816-d933c7d2b988?q=80&w=800&auto=format&fit=crop',
     featured: true,
   },
   {
@@ -154,7 +154,7 @@ export const projects = [
     value: 11000000,
     location: 'Dallas, TX',
     description: 'Enterprise colocation facility electrical fit-out.',
-    image: '/images/portfolio/datacenter-3.jpg',
+    image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=800&auto=format&fit=crop',
     featured: false,
   },
 ];

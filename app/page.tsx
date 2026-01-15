@@ -290,12 +290,19 @@ export default function Home() {
               <Link
                 key={project.id}
                 href={`/portfolio#${project.id}`}
-                className="group relative overflow-hidden rounded-2xl bg-gray-100 aspect-[4/3]"
+                className="group relative overflow-hidden rounded-2xl aspect-[4/3]"
               >
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent z-10" />
                 <div className="absolute inset-0 flex flex-col justify-end p-6 z-20">
                   <span className="inline-flex items-center gap-2 text-[#c8ff00] text-sm font-medium mb-2 capitalize">
-                    {project.category}
+                    {project.category.replace('-', ' ')}
                   </span>
                   <h3 className="text-2xl font-bold text-white group-hover:text-[#c8ff00] transition-colors">
                     {project.title}
