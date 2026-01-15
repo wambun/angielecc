@@ -1,18 +1,18 @@
-/* Angiel Electrical - Brand Colors */
+/* Angiel Electrical - Brand Colors (Dark Theme with Lime Accents) */
 const colors = {
   primary: {
-    lighter: '#fde68a',
-    light: '#fcd34d',
-    main: '#f59e0b',    // Amber/Gold - electrical theme
-    dark: '#d97706',
-    darker: '#b45309',
+    lighter: '#2d4a52',
+    light: '#243d44',
+    main: '#1a2e35',    // Dark teal/navy - matching design inspiration
+    dark: '#152529',
+    darker: '#0f1c1f',
   },
   secondary: {
-    lighter: '#93c5fd',
-    light: '#60a5fa',
-    main: '#3b82f6',    // Blue - professional/trust
-    dark: '#2563eb',
-    darker: '#1d4ed8',
+    lighter: '#e5ff66',
+    light: '#d4ff33',
+    main: '#c8ff00',    // Lime green accent - matching design inspiration
+    dark: '#a3cc00',
+    darker: '#7a9900',
   },
 };
 

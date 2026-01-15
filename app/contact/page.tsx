@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
-import { Button } from '@/components/shared/ui/button';
 import { companyInfo } from '@/data/company';
 import {
   Phone,
@@ -22,14 +21,16 @@ export default function ContactPage() {
   return (
     <div className="flex flex-col w-full">
       {/* Hero Section */}
-      <section className="w-full py-16 px-4 bg-gradient-to-b from-primary-50 to-white dark:from-gray-900 dark:to-gray-950">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-100 dark:bg-primary-900/30 rounded-full text-primary-700 dark:text-primary-300 text-sm font-medium mb-6">
-            <Phone className="h-4 w-4" />
-            Get In Touch
+      <section className="bg-[#1a2e35] pt-32 pb-20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#c8ff00]/10 rounded-full mb-6">
+            <Phone className="h-4 w-4 text-[#c8ff00]" />
+            <span className="text-[#c8ff00] text-sm font-medium">Get In Touch</span>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Contact Us</h1>
-          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            Contact <span className="text-[#c8ff00]">Us</span>
+          </h1>
+          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
             Have a question or ready to start your project? We're here to help.
             Reach out to us through any of the methods below.
           </p>
@@ -37,22 +38,22 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Cards */}
-      <section className="w-full py-16 px-4">
-        <div className="max-w-6xl mx-auto">
+      <section className="bg-[#152529] py-20">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
             {companyInfo.locations.map((location) => (
               <div
                 key={location.id}
-                className="p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-sm"
+                className="p-8 bg-[#1a2e35] rounded-2xl border border-gray-700"
               >
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900/30 rounded-lg flex items-center justify-center">
-                    <Building2 className="h-6 w-6 text-primary-600" />
+                  <div className="w-12 h-12 bg-[#c8ff00]/10 rounded-lg flex items-center justify-center">
+                    <Building2 className="h-6 w-6 text-[#c8ff00]" />
                   </div>
                   <div>
-                    <h2 className="text-xl font-bold">{location.name}</h2>
+                    <h2 className="text-xl font-bold text-white">{location.name}</h2>
                     {location.isPrimary && (
-                      <span className="text-xs text-primary-600 font-medium">
+                      <span className="text-xs text-[#c8ff00] font-medium">
                         Headquarters
                       </span>
                     )}
@@ -61,22 +62,22 @@ export default function ContactPage() {
 
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
-                    <MapPin className="h-5 w-5 text-gray-400 mt-0.5 flex-shrink-0" />
+                    <MapPin className="h-5 w-5 text-[#c8ff00] mt-0.5 flex-shrink-0" />
                     <div>
-                      <p className="text-gray-700 dark:text-gray-300">
+                      <p className="text-gray-300">
                         {location.address}
                       </p>
-                      <p className="text-gray-700 dark:text-gray-300">
+                      <p className="text-gray-300">
                         {location.city}, {location.state} {location.zip}
                       </p>
                     </div>
                   </div>
 
                   <div className="flex items-center gap-3">
-                    <Phone className="h-5 w-5 text-gray-400 flex-shrink-0" />
+                    <Phone className="h-5 w-5 text-[#c8ff00] flex-shrink-0" />
                     <a
                       href={`tel:${location.phone}`}
-                      className="text-gray-700 dark:text-gray-300 hover:text-primary-500 transition-colors"
+                      className="text-gray-300 hover:text-[#c8ff00] transition-colors"
                     >
                       {location.phone}
                     </a>
@@ -84,10 +85,10 @@ export default function ContactPage() {
 
                   {location.fax && (
                     <div className="flex items-center gap-3">
-                      <span className="w-5 text-center text-gray-400 text-xs">
+                      <span className="w-5 text-center text-[#c8ff00] text-xs">
                         FAX
                       </span>
-                      <span className="text-gray-700 dark:text-gray-300">
+                      <span className="text-gray-300">
                         {location.fax}
                       </span>
                     </div>
@@ -95,10 +96,10 @@ export default function ContactPage() {
 
                   {location.email && (
                     <div className="flex items-center gap-3">
-                      <Mail className="h-5 w-5 text-gray-400 flex-shrink-0" />
+                      <Mail className="h-5 w-5 text-[#c8ff00] flex-shrink-0" />
                       <a
                         href={`mailto:${location.email}`}
-                        className="text-gray-700 dark:text-gray-300 hover:text-primary-500 transition-colors"
+                        className="text-gray-300 hover:text-[#c8ff00] transition-colors"
                       >
                         {location.email}
                       </a>
@@ -106,14 +107,14 @@ export default function ContactPage() {
                   )}
                 </div>
 
-                <div className="mt-6 pt-6 border-t border-gray-100 dark:border-gray-700">
+                <div className="mt-6 pt-6 border-t border-gray-700">
                   <a
                     href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
                       `${location.address}, ${location.city}, ${location.state} ${location.zip}`
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center text-primary-600 hover:text-primary-700 font-medium"
+                    className="inline-flex items-center text-[#c8ff00] hover:underline font-medium"
                   >
                     Get Directions
                     <ArrowRight className="ml-2 h-4 w-4" />
@@ -124,19 +125,18 @@ export default function ContactPage() {
           </div>
 
           {/* Business Hours */}
-          <div className="max-w-2xl mx-auto text-center p-8 bg-gray-50 dark:bg-gray-800/50 rounded-2xl">
-            <Clock className="h-8 w-8 text-primary-500 mx-auto mb-4" />
-            <h3 className="text-xl font-bold mb-4">Business Hours</h3>
-            <div className="space-y-2 text-gray-600 dark:text-gray-400">
+          <div className="max-w-2xl mx-auto text-center p-8 bg-[#1a2e35] rounded-2xl border border-gray-700">
+            <Clock className="h-8 w-8 text-[#c8ff00] mx-auto mb-4" />
+            <h3 className="text-xl font-bold text-white mb-4">Business Hours</h3>
+            <div className="space-y-2 text-gray-400">
               <p>
-                <span className="font-medium">Monday - Friday:</span> 7:00 AM -
-                5:00 PM
+                <span className="font-medium text-white">Monday - Friday:</span> 7:00 AM - 5:00 PM
               </p>
               <p>
-                <span className="font-medium">Saturday - Sunday:</span> Closed
+                <span className="font-medium text-white">Saturday - Sunday:</span> Closed
               </p>
               <p className="mt-4 text-sm">
-                <Zap className="inline h-4 w-4 text-primary-500 mr-1" />
+                <Zap className="inline h-4 w-4 text-[#c8ff00] mr-1" />
                 24/7 Emergency Service Available
               </p>
             </div>
@@ -145,44 +145,37 @@ export default function ContactPage() {
       </section>
 
       {/* Service Request CTA */}
-      <section className="w-full py-16 px-4 bg-primary-500 text-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+      <section className="bg-[#c8ff00] py-20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#1a2e35] mb-4">
             Need a Quote for Your Project?
           </h2>
-          <p className="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
+          <p className="text-[#1a2e35]/80 text-lg mb-8 max-w-2xl mx-auto">
             Fill out our service request form and our team will get back to you
             with a detailed estimate.
           </p>
-          <Button
-            size="lg"
-            variant="secondary"
-            className="bg-white text-primary-600 hover:bg-gray-100"
-            asChild
+          <Link
+            href="/contact/request-service"
+            className="inline-flex items-center justify-center gap-2 bg-[#1a2e35] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#152529] transition-colors"
           >
-            <Link href="/contact/request-service">
-              Request Service
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
+            Request Service
+            <ArrowRight className="h-5 w-5" />
+          </Link>
         </div>
       </section>
 
       {/* Affiliations */}
-      <section className="w-full py-16 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h3 className="text-lg font-semibold text-gray-500 dark:text-gray-400 mb-6">
+      <section className="bg-[#1a2e35] py-16 border-t border-gray-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-center text-gray-500 text-sm uppercase tracking-wider mb-8">
             Proud Members Of
-          </h3>
-          <div className="flex justify-center gap-8">
+          </p>
+          <div className="flex flex-wrap justify-center gap-8 items-center">
             {companyInfo.affiliations.map((affiliation) => (
-              <div
-                key={affiliation.id}
-                className="px-6 py-3 bg-gray-100 dark:bg-gray-800 rounded-lg"
-              >
-                <span className="font-bold text-gray-700 dark:text-gray-300">
+              <div key={affiliation.id} className="text-center">
+                <p className="text-2xl font-bold text-gray-400 hover:text-[#c8ff00] transition-colors">
                   {affiliation.name}
-                </span>
+                </p>
               </div>
             ))}
           </div>

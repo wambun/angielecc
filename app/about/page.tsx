@@ -1,16 +1,8 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
-import {
-  LandingAboutSection,
-  LandingVisionMissionSection,
-  LandingStatsSection,
-  LandingStatItem,
-  LandingPrimaryTextCtaSection,
-} from '@/components/landing';
-import { Button } from '@/components/shared/ui/button';
 import { companyInfo } from '@/data/company';
 import { portfolioStats } from '@/data/portfolio';
-import { ArrowRight, Shield, Award, Users } from 'lucide-react';
+import { ArrowRight, Shield, Award, Users, Target, Eye, Zap } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'About Us',
@@ -20,57 +12,88 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <div className="flex flex-col w-full">
-      {/* Hero/About Section */}
-      <LandingAboutSection
-        title="About Angiel Electrical"
-        description={companyInfo.description}
-        imageSrc="/images/about-hero.jpg"
-        imageAlt="Angiel Electrical team"
-        withBackground
-        variant="secondary"
-      />
+      {/* Hero Section */}
+      <section className="bg-[#1a2e35] pt-32 pb-20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#c8ff00]/10 rounded-full mb-6">
+            <Zap className="h-4 w-4 text-[#c8ff00]" />
+            <span className="text-[#c8ff00] text-sm font-medium">About Us</span>
+          </div>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            About <span className="text-[#c8ff00]">Angiel Electrical</span>
+          </h1>
+          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+            {companyInfo.description}
+          </p>
+        </div>
+      </section>
 
       {/* Stats */}
-      <LandingStatsSection
-        title="Our Track Record"
-        description="Numbers that reflect our commitment to excellence"
-        withBackground={false}
-      >
-        <LandingStatItem
-          value={`${companyInfo.yearsInBusiness}+`}
-          description="Years in Business"
-        />
-        <LandingStatItem
-          value={`${portfolioStats.totalProjects}+`}
-          description="Projects Completed"
-        />
-        <LandingStatItem
-          value={`${portfolioStats.satisfiedClients}+`}
-          description="Satisfied Clients"
-        />
-        <LandingStatItem
-          value={companyInfo.safetyMetrics.emrAverage.toString()}
-          description="EMR Safety Rating"
-        />
-      </LandingStatsSection>
+      <section className="bg-[#152529] py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <span className="text-[#c8ff00] text-sm font-semibold uppercase tracking-wider">
+              Our Track Record
+            </span>
+            <h2 className="text-3xl font-bold text-white mt-4">
+              Numbers that reflect our commitment to excellence
+            </h2>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="text-center">
+              <p className="text-4xl md:text-5xl font-bold text-[#c8ff00]">{companyInfo.yearsInBusiness}+</p>
+              <p className="text-gray-400 mt-2">Years in Business</p>
+            </div>
+            <div className="text-center">
+              <p className="text-4xl md:text-5xl font-bold text-[#c8ff00]">{portfolioStats.totalProjects}+</p>
+              <p className="text-gray-400 mt-2">Projects Completed</p>
+            </div>
+            <div className="text-center">
+              <p className="text-4xl md:text-5xl font-bold text-[#c8ff00]">{portfolioStats.satisfiedClients}+</p>
+              <p className="text-gray-400 mt-2">Satisfied Clients</p>
+            </div>
+            <div className="text-center">
+              <p className="text-4xl md:text-5xl font-bold text-[#c8ff00]">{companyInfo.safetyMetrics.emrAverage}</p>
+              <p className="text-gray-400 mt-2">EMR Safety Rating</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Vision & Mission */}
-      <LandingVisionMissionSection
-        visionTitle="Our Vision"
-        visionDescription={companyInfo.vision}
-        missionTitle="Our Mission"
-        missionDescription={companyInfo.mission}
-        withBackground
-        variant="primary"
-      />
+      <section className="bg-[#1a2e35] py-20">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-[#243d44] p-8 rounded-2xl border border-gray-700">
+              <div className="bg-[#c8ff00] w-14 h-14 rounded-xl flex items-center justify-center mb-6">
+                <Eye className="h-7 w-7 text-[#1a2e35]" />
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4">Our Vision</h3>
+              <p className="text-gray-400">{companyInfo.vision}</p>
+            </div>
+            <div className="bg-[#243d44] p-8 rounded-2xl border border-gray-700">
+              <div className="bg-[#c8ff00] w-14 h-14 rounded-xl flex items-center justify-center mb-6">
+                <Target className="h-7 w-7 text-[#1a2e35]" />
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4">Our Mission</h3>
+              <p className="text-gray-400">{companyInfo.mission}</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* History Section */}
-      <section className="w-full py-16 px-4">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-            Our History
-          </h2>
-          <div className="prose prose-lg dark:prose-invert mx-auto">
+      <section className="bg-[#152529] py-20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <span className="text-[#c8ff00] text-sm font-semibold uppercase tracking-wider">
+              Our Story
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mt-4">
+              Our History
+            </h2>
+          </div>
+          <div className="space-y-6 text-gray-400">
             <p>
               Founded in 1956, Angiel Electrical Construction Corporation has
               grown from a small local electrical contractor to one of the most
@@ -96,44 +119,55 @@ export default function AboutPage() {
       </section>
 
       {/* Quick Links to Sub-pages */}
-      <section className="w-full py-16 px-4 bg-gray-50 dark:bg-gray-900">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold mb-8 text-center">Learn More</h2>
+      <section className="bg-[#1a2e35] py-20">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <span className="text-[#c8ff00] text-sm font-semibold uppercase tracking-wider">
+              Explore More
+            </span>
+            <h2 className="text-3xl font-bold text-white mt-4">Learn More About Us</h2>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <Link
               href="/about/safety"
-              className="group p-6 bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-md transition-shadow"
+              className="group p-6 bg-[#243d44] rounded-xl border border-gray-700 hover:border-[#c8ff00] transition-all"
             >
-              <Shield className="h-10 w-10 text-primary-500 mb-4" />
-              <h3 className="text-xl font-semibold mb-2 group-hover:text-primary-500 transition-colors">
+              <div className="bg-[#c8ff00]/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4 group-hover:bg-[#c8ff00]/20 transition-colors">
+                <Shield className="h-6 w-6 text-[#c8ff00]" />
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-[#c8ff00] transition-colors">
                 Safety Program
               </h3>
-              <p className="text-gray-600 dark:text-gray-400">
+              <p className="text-gray-400 text-sm">
                 Learn about our industry-leading safety practices and
                 certifications.
               </p>
             </Link>
             <Link
               href="/about/affiliations"
-              className="group p-6 bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-md transition-shadow"
+              className="group p-6 bg-[#243d44] rounded-xl border border-gray-700 hover:border-[#c8ff00] transition-all"
             >
-              <Award className="h-10 w-10 text-primary-500 mb-4" />
-              <h3 className="text-xl font-semibold mb-2 group-hover:text-primary-500 transition-colors">
+              <div className="bg-[#c8ff00]/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4 group-hover:bg-[#c8ff00]/20 transition-colors">
+                <Award className="h-6 w-6 text-[#c8ff00]" />
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-[#c8ff00] transition-colors">
                 Industry Affiliations
               </h3>
-              <p className="text-gray-600 dark:text-gray-400">
+              <p className="text-gray-400 text-sm">
                 Discover our partnerships with NECA and IBEW.
               </p>
             </Link>
             <Link
               href="/about/careers"
-              className="group p-6 bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-md transition-shadow"
+              className="group p-6 bg-[#243d44] rounded-xl border border-gray-700 hover:border-[#c8ff00] transition-all"
             >
-              <Users className="h-10 w-10 text-primary-500 mb-4" />
-              <h3 className="text-xl font-semibold mb-2 group-hover:text-primary-500 transition-colors">
+              <div className="bg-[#c8ff00]/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4 group-hover:bg-[#c8ff00]/20 transition-colors">
+                <Users className="h-6 w-6 text-[#c8ff00]" />
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-[#c8ff00] transition-colors">
                 Careers
               </h3>
-              <p className="text-gray-600 dark:text-gray-400">
+              <p className="text-gray-400 text-sm">
                 Join our team and build your career with us.
               </p>
             </Link>
@@ -142,24 +176,31 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <LandingPrimaryTextCtaSection
-        title="Ready to Work With Us?"
-        description="Contact us today to discuss your next electrical construction project."
-        withBackground
-        variant="secondary"
-      >
-        <div className="flex flex-col sm:flex-row gap-4">
-          <Button size="lg" asChild>
-            <Link href="/contact">
+      <section className="bg-[#c8ff00] py-20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#1a2e35] mb-4">
+            Ready to Work With Us?
+          </h2>
+          <p className="text-[#1a2e35]/80 text-lg mb-8">
+            Contact us today to discuss your next electrical construction project.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center gap-2 bg-[#1a2e35] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#152529] transition-colors"
+            >
               Contact Us
-              <ArrowRight className="ml-2 h-4 w-4" />
+              <ArrowRight className="h-5 w-5" />
             </Link>
-          </Button>
-          <Button size="lg" variant="outline" asChild>
-            <Link href="/portfolio">View Our Work</Link>
-          </Button>
+            <Link
+              href="/portfolio"
+              className="inline-flex items-center justify-center gap-2 border-2 border-[#1a2e35] text-[#1a2e35] px-8 py-4 rounded-full font-semibold hover:bg-[#1a2e35] hover:text-white transition-colors"
+            >
+              View Our Work
+            </Link>
+          </div>
         </div>
-      </LandingPrimaryTextCtaSection>
+      </section>
     </div>
   );
 }
