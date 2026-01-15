@@ -2,8 +2,9 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { headerNavLinks } from '@/data/config/headerNavLinks';
-import { Zap, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 export const Header = ({ className }: { className?: string }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -14,9 +15,13 @@ export const Header = ({ className }: { className?: string }) => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
-            <div className="bg-[#c8ff00] p-2 rounded-lg">
-              <Zap className="h-6 w-6 text-gray-900" />
-            </div>
+            <Image
+              src="/images/logo.png"
+              alt="Angiel Electrical Construction Corporation"
+              width={50}
+              height={46}
+              className="h-12 w-auto"
+            />
             <div className="flex flex-col">
               <span className="font-bold text-xl text-gray-900 leading-tight tracking-tight">
                 Angiel

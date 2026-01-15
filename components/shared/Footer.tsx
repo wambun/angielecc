@@ -1,7 +1,8 @@
 import { footerLinks } from '@/data/config/footerLinks';
 import { companyInfo } from '@/data/company';
-import { Zap, MapPin, Phone, Mail, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
+import { MapPin, Phone, Mail, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export const Footer = ({ className }: { className?: string }) => {
   const currentYear = new Date().getFullYear();
@@ -14,9 +15,13 @@ export const Footer = ({ className }: { className?: string }) => {
           {/* Logo & Description */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-3 mb-6">
-              <div className="bg-[#c8ff00] p-2 rounded-lg">
-                <Zap className="h-6 w-6 text-gray-900" />
-              </div>
+              <Image
+                src="/images/logo.png"
+                alt="Angiel Electrical Construction Corporation"
+                width={50}
+                height={46}
+                className="h-12 w-auto"
+              />
               <div className="flex flex-col">
                 <span className="font-bold text-xl text-white leading-tight">
                   Angiel
